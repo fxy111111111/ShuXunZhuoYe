@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot name="robot_first">
+    <!-- ST -->
+    <link name="base_link">
+        <!-- WG -->
+        <visual>
+        <!-- BY,XZ -->
+            <origin xyz="0.0 0.0 0.0"/>
+        <!-- XingZhuang -->
+            <geometry>
+            <!-- YuanZhu -->
+                <cylinder radius="0.10" length="0.12"/>
+            </geometry>
+            <!-- CaiZhi,YanSe -->
+            <material name="BaiSe">
+                <color rgba="1.0 1.0 1.0 0.5"/>
+            </material>
+        </visual>
+    </link>
+    
+
+    <link name="imu_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.02 0.02"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.0 0.0 0.0 0.5"/>
+            </material>
+        </visual>
+    </link>
+
+<!-- GuangJie -->              
+        <joint name="imu_joint" type="fixed"> 
+        <origin xyz="0.0 0.0 0.03" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="imu_link"/>
+        <axis xyz="0.0 0.0 0.0"/>
+    </joint>
+    
+</robot>
