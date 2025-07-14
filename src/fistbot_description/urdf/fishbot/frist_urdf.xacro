@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name ="fistbot">
+<robot name="robot_name">
+    
+    <xacro:<xacro:include filename="${find fishbot_description}/"/>
+</robot>

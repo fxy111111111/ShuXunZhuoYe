@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <xacro:macro name="laser_cylinder_xacro" params="">
+        <link name="laser_link">
+            <visual>
+                <origin xyz="0.0 0.0 0.0"/>
+                <geometry>
+                    <cylinder radius="0.01" length="0.10"/>
+                </geometry>
+            </visual>
+            <material name="black">
+                <color rgba="1.0 1.0 0.0 1.0"/>
+            </material>    
+        </link>
+
+        <link name="laser_link">
+            <visual>
+                <origin xyz="0.0 0.0 0.0"/>    
+                <geometry>
+                    <cylinder radius="0.02" length="0.02"/>
+                </geometry>
+            </visual>
+            <material name="black">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+            </material>    
+        </link>
+
+        <joint name="laser_joint" type="fixed">
+            <parent link="laser_cylinder_xacro"/>
+            <child link="laser_link"/>
+            <origin xyz="0.0 0.0 0.05" rpy="0.0 0.0 0.0"/>
+        </joint>
+
+        <joint name="laser_cylinder_joint" type="fixed">
+            <parent link="laser_cylinder_xacro"/>
+            <child link="base_link"/>
+            <origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
+        </joint>
+
+    <xacro:macro>
+
+    
+</robot>
